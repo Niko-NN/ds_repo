@@ -1,4 +1,6 @@
-x = 75
+import random
+
+x = random.randint(1, 100)
 user_num = 0
 cnt = 0
 
