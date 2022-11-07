@@ -1,9 +1,12 @@
-"""Комп сам загадывает и отгадывает число"""
+"""Игра 'Угадай число'
+Программа загадывает случайное целое число в указанном диапазоне и отгадывает его
+"""
+
 
 import numpy as np
 
 def random_predict(number:int=1) -> int:
-    """ Рандом угадайка числа
+    """Угадайка числа
 
     Args:
         number (int, optional): Загаданное число. Defaults to 1.
@@ -28,17 +31,17 @@ def random_predict(number:int=1) -> int:
 
 
 def score_game(random_predict) -> int:
-    """Среднее кол-во попыток угадайки за 1000 проходов
+    """Среднее количество попыток угадайки за 1000 проходов
 
     Args:
         random_predict (_type_): функция угадайки
 
     Returns:
-        int: Среднее кол-во попыток
+        int: Среднее количество попыток
     """
     count_ls = []
     np.random.seed(1) # фиксируем сид для воспроизводимости
-    random_array = np.random.randint(1, 101, size=(1000)) # загад список чисел
+    random_array = np.random.randint(1, 101, size=(1000)) # загадали список чисел
     
     for number in random_array:
         count_ls.append(random_predict(number))
