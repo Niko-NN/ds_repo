@@ -19,13 +19,16 @@ def random_predict(number:int=1) -> int:
     
     while True:
         count+=1
-        predict_number = (min+max)//2 # преполагаемое число
+        predict_number = (min+max)//2 # предполагаемое число
         if number < predict_number:
             max = predict_number - 1
         elif number > predict_number:
             min = predict_number + 1
         else:
             break # выход из цикла, если угадал
+        
+        if count > 20:
+            break
         
     return count
 
