@@ -42,7 +42,7 @@
 
 Наблюдения, которые лежат за пределами этого интервала будут считаться выбросами.
 
-![](https://www.etoro.com/wp-content/uploads/2021/01/pasted-image-0-37.png)
+![](https://openbooks.lib.msu.edu/app/uploads/sites/25/2020/04/4.2_Normal-Distribution.jpg)
 
 ### Алгоритм метода
 
