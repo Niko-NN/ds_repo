@@ -42,7 +42,7 @@
 
 Наблюдения, которые лежат за пределами этого интервала будут считаться выбросами.
 
-![](https://openbooks.lib.msu.edu/app/uploads/sites/25/2020/04/4.2_Normal-Distribution.jpg)
+![](https://wiki.loginom.ru/images/3-sigma.svg)
 
 ### Алгоритм метода
 
@@ -68,3 +68,40 @@
 
 ## Примеры использования
 
+Обязательными аргументами функций, реализующих методы поиска выбросов являются:
+* data (pandas.DataFrame): набор данных (таблица)
+* feature (str): имя признака, на основе которого производится поиск выбросов
+
+Использование классических подходов без модификаций:
+```python
+# Метод межквартального размаха
+from outliers_lib.find_outliers import find_outliers_iqr
+
+outliers_iqr, cleaned_iqr = find_outliers_iqr(data, feature)
+
+# Метод z-отклонений
+from outliers_lib.find_outliers import find_outliers_z_score
+
+outliers_z_score, cleaned_z_score = find_outliers_z_score(data, feature)
+```
+Использование методов с предварительным логарифмированием:
+```python
+outliers_iqr, cleaned_iqr = find_outliers_iqr(data, feature, log=True)
+
+outliers_z_score, cleaned_z_score = find_outliers_z_score(data, feature, log=True)
+```
+Использование методов с предварительным логарифмированием и добавлением вариативности разброса:
+```python
+outliers_iqr, cleaned_iqr = find_outliers_iqr(data, feature, log=True, left=2, right=2)
+
+outliers_z_score, cleaned_z_score = find_outliers_z_score(data, feature, log=True, left=2, right=2)
+```
+
+## Используемые библиотеки:
+* numpy
+* pandas
+
+## Дополнительные источники:
+* [Нормальное распределение](https://ru.wikipedia.org/wiki/Нормальное_распределение)
+* [Метод межквартального размаха](https://recture.ru/common/chto-takoe-pravilo-mezhkvartilnogo-razmaha/)
+* [Правило трёх сигм](https://wiki.loginom.ru/articles/3-sigma-rule.html)
