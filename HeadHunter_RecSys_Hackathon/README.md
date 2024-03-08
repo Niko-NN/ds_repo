@@ -61,7 +61,6 @@ LightSANs (Light Sequence-Aware Neural Networks) - это модель, осно
 ## Ссылки:
 - Ссылка на код: [GitHub](https://github.com/Niko-NN/ds_repo/blob/master/HeadHunter_RecSys_Hackathon/hh-recsys-recbole.ipynb)
 - Библиотека Recbole: [Recbole](https://www.recbole.io/)
-- Реализация модели LightSANs в библиотеке Recbole: [LightSANs](https://www.recbole.io/docs/user_guide/model/sequential/lightsans.html)
 
 ## Этот репозиторий может быть полезен:
 - Разработчикам, которые хотят улучшить свои навыки в области рекомендательных систем
